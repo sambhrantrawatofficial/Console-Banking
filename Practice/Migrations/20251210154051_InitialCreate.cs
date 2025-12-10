@@ -25,11 +25,28 @@ namespace Practice.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Loans",
+                columns: table => new
+                {
+                    Name = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    LoanId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Amount = table.Column<int>(type: "int", nullable: false),
+                    InterestRate = table.Column<int>(type: "int", nullable: false),
+                    TimePeriod = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    EndDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Loans", x => x.Name);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "TransferViaAccountnos",
                 columns: table => new
                 {
                     Sender_Name = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Id = table.Column<int>(type: "int", nullable: false),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Sender_AccountNo = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Receiver_Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Receiver_AccountNo = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -46,7 +63,7 @@ namespace Practice.Migrations
                 columns: table => new
                 {
                     Sender_Name = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Id = table.Column<int>(type: "int", nullable: false),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Sender_PhoneNo = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Receiver_Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Receiver_PhoneNo = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -79,6 +96,9 @@ namespace Practice.Migrations
         {
             migrationBuilder.DropTable(
                 name: "AccountDets");
+
+            migrationBuilder.DropTable(
+                name: "Loans");
 
             migrationBuilder.DropTable(
                 name: "TransferViaAccountnos");

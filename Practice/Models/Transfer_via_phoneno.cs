@@ -8,7 +8,7 @@ namespace Practice.Models
     public class Transfer_via_phoneno
     {
         
-        public int Id { get; set; }  
+        public Guid Id { get; set; }  
         [Key]
         public string Sender_Name { get; set; }
         public string Sender_PhoneNo { get; set; } 

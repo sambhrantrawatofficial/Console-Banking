@@ -32,7 +32,8 @@ namespace Practice
                 else
                 {
                     Console.Clear();
-                    Console.WriteLine("1. View Account Details \n2. Transfer money \n3. Exit");
+
+                    Console.WriteLine("1. View Account Details \n2. Transfer money \n3. Cibil score \n4. Loan \n5. Exit");
                     string input2 = Console.ReadLine()!;
 
                     if (input2 == "1")
@@ -63,6 +64,38 @@ namespace Practice
                             int amount = int.Parse(Console.ReadLine()!);
                             var TMviaPh = new TransferMoneyService();
                             TMviaPh.TransferViaPhoneNo(username, receiverPhoneNo, amount);
+                        }
+                    }
+                    if (input2 == "3")
+                    {
+                        Console.Clear();
+                        var cibilService = new CibilService();
+                        cibilService.CibilScore(username);
+                    }
+
+                    if (input2 == "4")
+                    {
+                        Console.Clear();
+                        Console.WriteLine("---------- Loan Section ----------");
+
+                        Console.WriteLine("1. Get Loan \n2. View Loan Details");
+                        string input5 = Console.ReadLine()!;
+
+                        var cibildetail = new CibilService();
+
+                        if (input5 == "1")
+                        {
+                            var loanService = new LoanService();
+                            loanService.GetLoan(username, cibildetail.CanGetLoan(username));
+                        }
+                        else if (input5 =="2")
+                        {
+                            var loanService = new LoanService();
+                            loanService.ViewLoanDetails(username);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid Input!");
                         }
                     }
                 }

@@ -2,6 +2,7 @@
 using Practice.Models;
 using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace Practice.Services
@@ -35,7 +36,7 @@ namespace Practice.Services
             var Accountdet = new AccountDet
             {
                 Name = username,
-                Account_No = new Random().Next(10000000, 99999999),
+                Account_No = RandomNumberGenerator.GetInt32(10000000, 100000000),
                 Balance = 1500
             };
             _context.Users.Add(newUser);

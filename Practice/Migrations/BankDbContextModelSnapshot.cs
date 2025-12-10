@@ -38,6 +38,35 @@ namespace Practice.Migrations
                     b.ToTable("AccountDets");
                 });
 
+            modelBuilder.Entity("Practice.Models.Loan", b =>
+                {
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("InterestRate")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("LoanId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("TimePeriod")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Name");
+
+                    b.ToTable("Loans");
+                });
+
             modelBuilder.Entity("Practice.Models.Transfer_via_accountno", b =>
                 {
                     b.Property<string>("Sender_Name")
@@ -47,8 +76,8 @@ namespace Practice.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Receiver_AccountNo")
                         .IsRequired()
@@ -79,8 +108,8 @@ namespace Practice.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Receiver_Name")
                         .IsRequired()

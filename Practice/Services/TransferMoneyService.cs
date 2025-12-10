@@ -51,6 +51,7 @@ namespace Practice.Services
 
             var transfer = new Transfer_via_accountno
             {
+                Id = Guid.NewGuid(),
                 Sender_Name = senderAccount.Name,
                 Sender_AccountNo = senderAccount.Account_No.ToString(),
                 Receiver_Name = receiverAccount.Name,
@@ -104,6 +105,7 @@ namespace Practice.Services
 
             var transfer = new Transfer_via_phoneno
             {
+                Id = Guid.NewGuid(),
                 Sender_Name = senderUser.Name,
                 Sender_PhoneNo = senderUser.PhoneNumber,
                 Receiver_Name = receiverUser.Name,
