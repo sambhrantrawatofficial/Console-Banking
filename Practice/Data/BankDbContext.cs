@@ -14,8 +14,8 @@ namespace Practice.Data
         public DbSet<AccountDet> AccountDets { get; set; } = null!;
         public DbSet<Transfer_via_accountno> TransferViaAccountnos { get; set; } = null!;
         public DbSet<Transfer_via_phoneno> TransferViaPhonenos { get; set; } = null!;
+        public DbSet<Loan> Loans { get; set; } = null!;
 
-       
 
 
     }

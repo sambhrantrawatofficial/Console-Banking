@@ -32,23 +32,30 @@ namespace Practice
                 else
                 {
                     Console.Clear();
-                    Console.WriteLine("1. View Account Details \n2. Transfer money \n3. Exit");
+
+                    Console.WriteLine("1. View Account Details \n2. Transfer money \n3. Cibil score \n4. Loan \n5. Exit");
                     string input2 = Console.ReadLine()!;
 
                     if (input2 == "1")
                     {
+                        Console.Clear();
+                        Console.WriteLine("---------- Account Details ----------\n");
                         var accountService = new AccountService();
                         accountService.ViewAccountDetails(username);
                     }
 
                     if (input2.Contains("2"))
                     {
-                        Console.WriteLine("1. Transfer via Account Number \n2. Transfer via Phone Number");
+                        Console.Clear();
+                        Console.WriteLine("---------- Transfer Money ----------");
+                        Console.WriteLine("\n1. Transfer via Account Number \n2. Transfer via Phone Number");
                         string input3 = Console.ReadLine()!;
 
                         if (input3 == "1")
                         {
-                            Console.WriteLine("Enter Receiver's Account Number: ");
+                            Console.Clear();
+                            Console.WriteLine("---------- Transfer via Account Number ----------");
+                            Console.WriteLine("\nEnter Receiver's Account Number: ");
                             string receiverAccountNo = Console.ReadLine()!;
                             Console.WriteLine("Enter Amount to Transfer: ");
                             int amount = int.Parse(Console.ReadLine()!);
@@ -57,12 +64,46 @@ namespace Practice
                         }
                         else if (input3 == "2")
                         {
-                            Console.WriteLine("Enter Receiver's Phone Number: ");
+                            Console.Clear();
+                            Console.WriteLine("---------- Transfer via Phone Number ----------");
+                            Console.WriteLine("\nEnter Receiver's Phone Number: ");
                             string receiverPhoneNo = Console.ReadLine()!;
                             Console.WriteLine("Enter Amount to Transfer: ");
                             int amount = int.Parse(Console.ReadLine()!);
                             var TMviaPh = new TransferMoneyService();
                             TMviaPh.TransferViaPhoneNo(username, receiverPhoneNo, amount);
+                        }
+                    }
+                    if (input2 == "3")
+                    {
+                        Console.Clear();
+                        var cibilService = new CibilService();
+                        cibilService.CibilScore(username);
+                    }
+
+                    if (input2 == "4")
+                    {
+                        Console.Clear();
+                        Console.WriteLine("---------- Loan Section ----------");
+
+                        Console.WriteLine("\n1. Get Loan \n2. View Loan Details");
+                        string input5 = Console.ReadLine()!;
+
+                        var cibildetail = new CibilService();
+
+                        if (input5 == "1")
+                        {
+                            var loanService = new LoanService();
+                            loanService.GetLoan(username, cibildetail.CanGetLoan(username));
+                        }
+                        else if (input5 =="2")
+                        {
+                            var loanService = new LoanService();
+                            loanService.ViewLoanDetails(username);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid Input!");
                         }
                     }
                 }
