@@ -23,7 +23,7 @@ namespace Practice.Services
             {
                 Console.WriteLine("Login Successful! Welcome " + user.Name);
                 Console.ReadLine();
-                return user != null;
+                return true;
             }
             else
             {

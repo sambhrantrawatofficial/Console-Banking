@@ -46,16 +46,15 @@ namespace Practice.Services
                 return;
             }
 
-            int.Parse(senderAccount.Balance) -= int.Parse(amount);
-            int.Parse(receiverAccount.Balance) += int.Parse(amount);
+            senderAccount.Balance -= amount;
+            receiverAccount.Balance += amount;
 
             var transfer = new Transfer_via_accountno
             {
-                Id = Guid.NewGuid(),
                 Sender_Name = senderAccount.Name,
-                Sender_AccountNo = senderAccount.Account_No,
+                Sender_AccountNo = senderAccount.Account_No.ToString(),
                 Receiver_Name = receiverAccount.Name,
-                Receiver_AccountNo = receiverAccount.Account_No,
+                Receiver_AccountNo = receiverAccount.Account_No.ToString(),
                 Amount = amount.ToString(),
                 Transfer_Date = DateTime.Now
             };
@@ -100,12 +99,11 @@ namespace Practice.Services
                 return;
             }
 
-            int.Parse(senderAccount.Balance) -= int.Parse(amount);
-            int.Parse(receiverAccount.Balance) += int.Parse(amount);
+            senderAccount.Balance -= amount;
+            receiverAccount.Balance += amount;
 
             var transfer = new Transfer_via_phoneno
             {
-                Id = Guid.NewGuid(),
                 Sender_Name = senderUser.Name,
                 Sender_PhoneNo = senderUser.PhoneNumber,
                 Receiver_Name = receiverUser.Name,

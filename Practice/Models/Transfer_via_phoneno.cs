@@ -7,13 +7,14 @@ namespace Practice.Models
 {
     public class Transfer_via_phoneno
     {
+        
+        public int Id { get; set; }  
         [Key]
-        public Guid Id { get; set; }
-        public string Sender_Name { get; set; } = null!;
-        public string Sender_PhoneNo { get; set; } = null!;
-        public string Receiver_Name { get; set; } = null!;
-        public string Receiver_PhoneNo { get; set; } = null!;
-        public string Amount { get; set; } = null!;
+        public string Sender_Name { get; set; }
+        public string Sender_PhoneNo { get; set; } 
+        public string Receiver_Name { get; set; } 
+        public string Receiver_PhoneNo { get; set; } 
+        public string Amount { get; set; } 
         public DateTime Transfer_Date { get; set; }
     }
 }

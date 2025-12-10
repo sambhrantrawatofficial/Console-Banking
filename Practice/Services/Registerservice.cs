@@ -39,6 +39,7 @@ namespace Practice.Services
                 Balance = 1500
             };
             _context.Users.Add(newUser);
+            _context.AccountDets.Add(Accountdet);
             _context.SaveChanges();
             Console.WriteLine("Registration Successful! You can now login.");
             Console.ReadLine();
