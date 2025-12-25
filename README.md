@@ -51,5 +51,3 @@ This project is designed to help beginners understand **core C# concepts** and *
 ### Clone the Repository
 ```bash
 git clone https://github.com/sambhrantrawatofficial/Console-Banking
-
----
