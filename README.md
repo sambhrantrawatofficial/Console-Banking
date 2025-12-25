@@ -1,17 +1,38 @@
-🏦 Console Banking System
-A simple and beginner-friendly Console-Based Banking Application developed using C# (.NET).
-This project simulates basic banking operations through a command-line interface and is ideal for learning core programming concepts.
-📌 Project Overview
-The Console Banking System allows users to perform common banking tasks such as creating an account, depositing money, withdrawing money, and checking account balance — all via a console interface.
-This project focuses on clarity, logic, and core C# fundamentals without using any external database or UI framework.
-✨ Features
-✅ Create a new bank account
-💰 Deposit money into account
-💸 Withdraw money from account
-📊 Check current account balance
-🖥️ Simple menu-driven console interface
-🧠 Uses core C# concepts (classes, methods, loops, conditionals)
-🛠️ Technologies Used
-Language: C#
-Framework: .NET (Console Application)
-IDE: Visual Studio / VS Code (any C# supported IDE)
+# 🏦 Console Banking System
+
+A simple and beginner-friendly **console-based banking application** developed using **C# (.NET)**.
+
+---
+
+## 📌 Project Overview
+
+The Console Banking System is a command-line application that simulates basic banking operations such as account creation, deposits, withdrawals, and balance checking.
+
+This project is designed to help beginners understand **core C# concepts** and **program logic** without using any database or GUI.
+
+---
+
+## ✨ Features
+
+- Create a new bank account  
+- Deposit money  
+- Withdraw money  
+- Check account balance  
+- Menu-driven console interface  
+- Beginner-friendly logic  
+
+---
+
+## 🛠 Technologies Used
+
+- **Language:** C#  
+- **Framework:** .NET  
+- **Application Type:** Console Application  
+
+---
+
+## 🚀 Getting Started
+
+### Clone the Repository
+```bash
+git clone https://github.com/sambhrantrawatofficial/Console-Banking
