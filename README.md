@@ -36,3 +36,18 @@ This project is designed to help beginners understand **core C# concepts** and *
 ### Clone the Repository
 ```bash
 git clone https://github.com/sambhrantrawatofficial/Console-Banking
+
+## 🔐 Validations
+
+- Prevents withdrawal if balance is insufficient  
+- Ensures valid numeric input  
+- Disallows negative values  
+
+---
+
+## 🎯 Learning Outcomes
+
+- Understanding console applications  
+- Applying Object-Oriented Programming (OOP)  
+- Writing clean business logic  
+- Handling user input effectively
