@@ -37,6 +37,8 @@ This project is designed to help beginners understand **core C# concepts** and *
 ```bash
 git clone https://github.com/sambhrantrawatofficial/Console-Banking
 
+---
+
 ## 🔐 Validations
 
 - Prevents withdrawal if balance is insufficient  
